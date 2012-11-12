@@ -1,12 +1,13 @@
 //
 //  MainViewController.m
-//  UWAPIWrapper
+//  UWAPIWrapperDemo
 //
 //  Created by Yuanfeng on 2012-11-12.
 //  Copyright (c) 2012 UW Mobile Club. All rights reserved.
 //
 
 #import "MainViewController.h"
+#import "UWAPIWrapper.h"
 
 @interface MainViewController ()
 
@@ -18,6 +19,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[UWAPIWrapper sharedManager] requestParsedJSONResponseWithMethodName:@"WatPark" QueryIfNeeded:nil APIKey:@"cc7004c25526969882ff31eddb1d18f4" completionBlock:^(id parsedJSONObject) {
+        
+        
+        NSLog(@"%@", parsedJSONObject);
+        
+    } failedBlock:^(NSError *error) {
+        
+    } usingCachedDataBlock:nil];
 }
 
 - (void)didReceiveMemoryWarning

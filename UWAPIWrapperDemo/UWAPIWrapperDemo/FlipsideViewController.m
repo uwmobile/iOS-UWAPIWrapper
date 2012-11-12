@@ -1,6 +1,6 @@
 //
 //  FlipsideViewController.m
-//  UWAPIWrapper
+//  UWAPIWrapperDemo
 //
 //  Created by Yuanfeng on 2012-11-12.
 //  Copyright (c) 2012 UW Mobile Club. All rights reserved.
@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -24,8 +25,7 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
+} 
 #pragma mark - Actions
 
 - (IBAction)done:(id)sender
