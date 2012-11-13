@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "UWAPIWrapper.h"
+#import "JSONKit.h"
 
 @interface MainViewController ()
 
@@ -24,14 +25,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [[UWAPIWrapper sharedManager] requestParsedJSONResponseWithMethodName:@"WatPark" QueryIfNeeded:nil APIKey:@"cc7004c25526969882ff31eddb1d18f4" completionBlock:^(id parsedJSONObject) {
-        
-        
-        NSLog(@"%@", parsedJSONObject);
-        
-    } failedBlock:^(NSError *error) {
-        
-    } usingCachedDataBlock:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,4 +48,24 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 
+- (void)viewDidUnload {
+    _output = nil;
+    [super viewDidUnload];
+}
+
+- (IBAction)onRequestClicked:(id)sender {
+    
+    [[UWAPIWrapper sharedManager] requestParsedJSONResponseWithMethodName:_method_name_txt_field.text QueryIfNeeded:nil APIKey:_api_key_txt_field.text completionBlock:^(id parsedJSONObject) {
+        NSLog(@"%@", parsedJSONObject);
+        NSDictionary *dict = parsedJSONObject;
+        
+        //Make keyboard disappear
+        [_method_name_txt_field resignFirstResponder];
+        [_api_key_txt_field resignFirstResponder];
+        
+        _output.text = [dict JSONString];
+    } failedBlock:^(NSError *error) {
+        
+    } usingCachedDataBlock:nil];
+}
 @end

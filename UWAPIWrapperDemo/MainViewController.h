@@ -9,7 +9,12 @@
 #import "FlipsideViewController.h"
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
-
+{
+    IBOutlet UITextField *_method_name_txt_field;
+    IBOutlet UITextField *_api_key_txt_field;
+    __unsafe_unretained IBOutlet UITextView *_output;
+}
 - (IBAction)showInfo:(id)sender;
+- (IBAction)onRequestClicked:(id)sender;
 
 @end

@@ -146,9 +146,9 @@
 				FECF2BA51651542C00DD7EA9 /* AppDelegate.m */,
 				FECF2BAD1651542C00DD7EA9 /* MainViewController.h */,
 				FECF2BAE1651542C00DD7EA9 /* MainViewController.m */,
+				FECF2BB31651542C00DD7EA9 /* MainViewController.xib */,
 				FECF2BB01651542C00DD7EA9 /* FlipsideViewController.h */,
 				FECF2BB11651542C00DD7EA9 /* FlipsideViewController.m */,
-				FECF2BB31651542C00DD7EA9 /* MainViewController.xib */,
 				FECF2BB61651542C00DD7EA9 /* FlipsideViewController.xib */,
 				FECF2B9C1651542C00DD7EA9 /* Supporting Files */,
 			);
