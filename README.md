@@ -22,6 +22,7 @@ To use the wrapper properly, follow these steps properly:
         - MobileCoreServices.framework
         - CoreGraphics.framework
 3. Just like what I did in demo, in MainViewController I do the following:
+
     [[UWAPIWrapper sharedInstance] requestParsedJSONResponseWithMethodName:@"WatPark" QueryIfNeeded:@"CS343" APIKey:@"fdafhdakfjhdafdafdafda" completionBlock:^(id parsedJSONObject) {
         //Code to execute when data comes back
         
@@ -30,4 +31,5 @@ To use the wrapper properly, follow these steps properly:
     } usingCachedDataBlock:^(id parsedJSONObject) {
         //You have to figure out how to store cache data by adding features to UWAPIWrapper itself :D
     }
+
 4. Done! That simple.
