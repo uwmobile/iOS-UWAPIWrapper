@@ -10,6 +10,7 @@
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
 {
+    __unsafe_unretained IBOutlet UITextField *_query_text_field;
     IBOutlet UITextField *_method_name_txt_field;
     IBOutlet UITextField *_api_key_txt_field;
     __unsafe_unretained IBOutlet UITextView *_output;

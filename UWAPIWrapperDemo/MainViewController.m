@@ -50,12 +50,17 @@
 
 - (void)viewDidUnload {
     _output = nil;
+    _query_text_field = nil;
     [super viewDidUnload];
 }
 
 - (IBAction)onRequestClicked:(id)sender {
+    NSString *query = _query_text_field.text;
+    if ([query isEqualToString:@""]) {
+        query = nil;
+    }
     
-    [[UWAPIWrapper sharedInstance] requestParsedJSONResponseWithMethodName:_method_name_txt_field.text QueryIfNeeded:nil APIKey:_api_key_txt_field.text completionBlock:^(id parsedJSONObject) {
+    [[UWAPIWrapper sharedInstance] requestParsedJSONResponseWithMethodName:_method_name_txt_field.text QueryIfNeeded:query APIKey:_api_key_txt_field.text completionBlock:^(id parsedJSONObject) {
         if (DEBUG) NSLog(@"%@", parsedJSONObject); //For debug
         NSDictionary *dict = parsedJSONObject;
         
@@ -69,8 +74,6 @@
         //TODO any message?
     } usingCachedDataBlock:^(id parsedJSONObject) {
         
-    }
-    
-    
+    }];
 }
 @end
