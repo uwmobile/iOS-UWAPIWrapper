@@ -1,5 +1,7 @@
 ## UWAPIWrapper ##
 
+Support iOS 4.3 and above
+
 Created by Elton Gao, UW Mobile Club.
 
 This wrapper is for students who want to develop app using University of Waterloo Open Data Initiative.
@@ -32,7 +34,7 @@ To use the wrapper properly, follow these steps properly:
         Go to You Project settings, you will a "Build Phase" Tab, you need to set all source files of JSONKit.m, ASIHttpRequest related .m files and Reachability.m to have the following compile flag: "fno-objc-arc".
         This is to turn off ARC for these source code: http://stackoverflow.com/questions/8958761/how-to-remove-arc-from-xcode
 
-4. Just like what I did in demo, in MainViewController I do the following:
+4. Just like what I did in demo, A sample of request is made like this:
 
         [[UWAPIWrapper sharedInstance] requestParsedJSONResponseWithMethodName:@"CourseSearch" QueryIfNeeded:@"CS 343" APIKey:@"you_api_key_here" completionBlock:^(id parsedJSONObject) {
                 //Code to execute when data comes back
@@ -43,4 +45,4 @@ To use the wrapper properly, follow these steps properly:
         }];
 
 
-Done! That simple.
+Done! That simple. By using the concept of block, we can put call back code in one place to increase readability of this code!
