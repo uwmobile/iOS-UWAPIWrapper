@@ -11,21 +11,21 @@
 
 #define UW_API_BASE_URL @"http://api.uwaterloo.ca/public/v1/?"
 
-static UWAPIWrapper *sharedManager;
+static UWAPIWrapper *sharedInstance;
 
 @implementation UWAPIWrapper
 
-+ (UWAPIWrapper*)sharedManager
++ (UWAPIWrapper*)sharedInstance
 {
-    if (!sharedManager) {
+    if (!sharedInstance) {
         @synchronized(self)
         {
-            if (!sharedManager) {
-                sharedManager = [[self alloc] init];
+            if (!sharedInstance) {
+                sharedInstance = [[self alloc] init];
             }
         }
     }
-    return sharedManager;
+    return sharedInstance;
 }
 
 - (id)init

@@ -55,17 +55,22 @@
 
 - (IBAction)onRequestClicked:(id)sender {
     
-    [[UWAPIWrapper sharedManager] requestParsedJSONResponseWithMethodName:_method_name_txt_field.text QueryIfNeeded:nil APIKey:_api_key_txt_field.text completionBlock:^(id parsedJSONObject) {
-        NSLog(@"%@", parsedJSONObject);
+    [[UWAPIWrapper sharedInstance] requestParsedJSONResponseWithMethodName:_method_name_txt_field.text QueryIfNeeded:nil APIKey:_api_key_txt_field.text completionBlock:^(id parsedJSONObject) {
+        if (DEBUG) NSLog(@"%@", parsedJSONObject); //For debug
         NSDictionary *dict = parsedJSONObject;
         
         //Make keyboard disappear
         [_method_name_txt_field resignFirstResponder];
         [_api_key_txt_field resignFirstResponder];
         
-        _output.text = [dict JSONString];
-    } failedBlock:^(NSError *error) {
+        _output.text = [dict JSONString]; //One possible crash, what if the JSON root level is an array instead?
         
-    } usingCachedDataBlock:nil];
+    } failedBlock:^(NSError *error) {
+        //TODO any message?
+    } usingCachedDataBlock:^(id parsedJSONObject) {
+        
+    }
+    
+    
 }
 @end

@@ -13,7 +13,7 @@
 {
 }
 
-+ (UWAPIWrapper*)sharedManager;
++ (UWAPIWrapper*)sharedInstance;
 - (void)requestParsedJSONResponseWithMethodName:(NSString*)mathodName QueryIfNeeded:(NSString*)query APIKey:(NSString*)APIkey completionBlock:(void (^)(id parsedJSONObject))completion failedBlock:(void (^)(NSError *error))failed usingCachedDataBlock:(void (^)(id parsedJSONObject))usingCachedData;
 
 @end
