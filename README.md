@@ -16,24 +16,24 @@ This wrapper require the following framewoek (Also attribution to them, thank yo
 3. Reachability.h Required by ASIHttpRequest, but very useful in telling you when the network comes back/disconnected.
 
 To use the wrapper properly, follow these steps properly:
-
-1. Drag the UWAPIWrapper folder into your project as a whole, remember to copy them into your project folder and add them to your target
+1. Drag the UWAPIWrapper folder into your project as a whole, remember to copy them into your project folder (not just reference) and add them to your target
 
 2. Make sure the following frameworks are included:
         - SystemConfiguration.framework
         - CFNetwork.framework
         - libz.dylib
         - MobileCoreServices.framework
-        - CoreGraphics.framework
-        
+        - CoreGraphics.framework  
+
 3. Just like what I did in demo, in MainViewController I do the following:
-    [[UWAPIWrapper sharedInstance] requestParsedJSONResponseWithMethodName:@"WatPark" QueryIfNeeded:@"CS343" APIKey:@"fdafhdakfjhdafdafdafda" completionBlock:^(id parsedJSONObject) {
-        //Code to execute when data comes back
-        
-    } failedBlock:^(NSError *error) {
-        //Code to execute when fail to retrieve data
-    } usingCachedDataBlock:^(id parsedJSONObject) {
-        //You have to figure out how to store cache data by adding features to UWAPIWrapper itself :D
-    }
+
+        [[UWAPIWrapper sharedInstance] requestParsedJSONResponseWithMethodName:@"CourseSearch" QueryIfNeeded:@"CS 343" APIKey:@"you_api_key_here" completionBlock:^(id parsedJSONObject) {
+                //Code to execute when data comes back
+            } failedBlock:^(NSError *error) {
+                //Code to execute when fail to retrieve data
+            } usingCachedDataBlock:^(id parsedJSONObject) {
+                //You have to figure out how to store cache data by adding features to UWAPIWrapper itself :D
+        }];
+
 
 Done! That simple.
