@@ -60,6 +60,8 @@
         query = nil;
     }
     
+    //TODO, if we have save the data from previous request, do we need to request again? not really, depends on acutal demand
+    //Also, what if multiply view controllers are requesting the same data? should we let them all point to same set? That can also be a question
     [[UWAPIWrapper sharedInstance] requestParsedJSONResponseWithMethodName:_method_name_txt_field.text QueryIfNeeded:query APIKey:_api_key_txt_field.text completionBlock:^(id parsedJSONObject) {
         if (DEBUG) NSLog(@"%@", parsedJSONObject); //For debug
         NSDictionary *dict = parsedJSONObject;
