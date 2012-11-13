@@ -17,9 +17,11 @@ This wrapper require the following framewoek (Also attribution to them, thank yo
 3. Reachability.h Required by ASIHttpRequest, but very useful in telling you when the network comes back/disconnected.
 
 To use the wrapper properly, follow these steps properly:
+
 1. Drag the UWAPIWrapper folder into your project as a whole, remember to copy them into your project folder (not just reference) and add them to your target
 
 2. Make sure the following frameworks are included, as they are required by framworks above
+
         - SystemConfiguration.framework
         - CFNetwork.framework
         - libz.dylib
