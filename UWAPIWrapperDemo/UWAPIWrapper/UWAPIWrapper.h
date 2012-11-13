@@ -43,6 +43,8 @@
 {
 }
 
+//I use Singleton as the structure of this wrapper just to make life easier when want to use this method
+//Although, sync of internal data can be achieved if someone ever want to add more features to it
 + (UWAPIWrapper*)sharedInstance;
 
 /**
