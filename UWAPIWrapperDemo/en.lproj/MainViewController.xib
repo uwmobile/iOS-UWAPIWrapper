@@ -137,6 +137,7 @@
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
+						<int key="IBUIClearButtonMode">3</int>
 						<reference key="IBUIFontDescription" ref="439499744"/>
 						<reference key="IBUIFont" ref="307401401"/>
 					</object>
@@ -245,6 +246,7 @@
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
+						<int key="IBUIClearButtonMode">3</int>
 						<reference key="IBUIFontDescription" ref="439499744"/>
 						<reference key="IBUIFont" ref="307401401"/>
 					</object>
