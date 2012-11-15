@@ -11,9 +11,12 @@
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
 {
     __unsafe_unretained IBOutlet UITextField *_query_text_field;
+    IBOutlet UITableView *_tableView;
     IBOutlet UITextField *_method_name_txt_field;
     IBOutlet UITextField *_api_key_txt_field;
     __unsafe_unretained IBOutlet UITextView *_output;
+    
+    NSMutableArray *_result_array;
 }
 - (IBAction)showInfo:(id)sender;
 - (IBAction)onRequestClicked:(id)sender;

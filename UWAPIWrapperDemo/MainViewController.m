@@ -19,6 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _result_array = [[NSMutableArray alloc] init];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
